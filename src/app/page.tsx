@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { EVENT } from "@/lib/event";
 import { RsvpForm } from "./rsvp-form";
 
@@ -15,6 +16,19 @@ export default function Home() {
             milestone with us.
           </p>
         </header>
+
+        <div className="mt-10 flex justify-center">
+          <div className="relative overflow-hidden rounded-2xl border border-amber-200 bg-white shadow-md">
+            <Image
+              src="/family.png"
+              alt={`${EVENT.hosts} at their housewarming`}
+              width={382}
+              height={662}
+              priority
+              className="block h-auto w-[260px] sm:w-[320px]"
+            />
+          </div>
+        </div>
 
         <section className="mt-10 rounded-2xl border border-amber-200 bg-white/60 p-8 text-center shadow-sm">
           <p className="font-display text-2xl text-stone-800">{EVENT.hosts}</p>
