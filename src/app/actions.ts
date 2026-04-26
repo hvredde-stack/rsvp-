@@ -6,7 +6,7 @@ import { insertRsvp } from "@/lib/db";
 const RsvpSchema = z.object({
   name: z.string().trim().min(1, "Please enter your name").max(120),
   attending: z.enum(["yes", "no"]),
-  guest_count: z.coerce.number().int().min(1).max(20),
+  guest_count: z.coerce.number().int().min(0).max(20),
   message: z.string().trim().max(500).optional(),
 });
 

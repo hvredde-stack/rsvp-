@@ -37,7 +37,7 @@ export function RsvpForm() {
           required
           maxLength={120}
           autoComplete="name"
-          className="mt-1 w-full rounded-md border border-stone-300 bg-white px-3 py-2 text-stone-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+          className="mt-1 w-full rounded-md border border-stone-300 bg-white px-3 py-2.5 text-base text-stone-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
         />
       </div>
 
@@ -95,10 +95,11 @@ export function RsvpForm() {
             id="guest_count"
             name="guest_count"
             type="number"
+            inputMode="numeric"
             min={1}
             max={20}
             defaultValue={1}
-            className="mt-1 w-28 rounded-md border border-stone-300 bg-white px-3 py-2 text-stone-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+            className="mt-1 w-28 rounded-md border border-stone-300 bg-white px-3 py-2.5 text-base text-stone-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
           />
         </div>
       )}
@@ -116,7 +117,7 @@ export function RsvpForm() {
           name="message"
           rows={3}
           maxLength={500}
-          className="mt-1 w-full rounded-md border border-stone-300 bg-white px-3 py-2 text-stone-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+          className="mt-1 w-full rounded-md border border-stone-300 bg-white px-3 py-2.5 text-base text-stone-900 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
         />
       </div>
 
