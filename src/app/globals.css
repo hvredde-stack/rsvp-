@@ -3,6 +3,7 @@
 @theme inline {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
+  --font-script: var(--font-script);
 }
 
 body {
@@ -10,6 +11,37 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
   letter-spacing: -0.01em;
+}
+
+.font-script {
+  font-family: var(--font-script), "Apple Chancery", "Brush Script MT", cursive;
+  letter-spacing: 0.005em;
+  font-weight: 400;
+}
+
+.tracking-luxe {
+  letter-spacing: 0.32em;
+}
+
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  color: #b08043;
+}
+
+.divider-ornament::before,
+.divider-ornament::after {
+  content: "";
+  height: 1px;
+  width: 3rem;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(176, 128, 67, 0.6),
+    transparent
+  );
 }

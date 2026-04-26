@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Great_Vibes, Inter } from "next/font/google";
 import "./globals.css";
 import { EVENT } from "@/lib/event";
 
@@ -7,6 +7,13 @@ const serif = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const script = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 const sans = Inter({
@@ -27,9 +34,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${serif.variable} ${sans.variable} h-full antialiased`}
+      className={`${serif.variable} ${script.variable} ${sans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#fdf8f1] text-stone-800 font-sans">
+      <body className="min-h-full flex flex-col bg-[#fbf6ec] text-stone-800 font-sans">
         {children}
       </body>
     </html>

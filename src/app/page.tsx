@@ -2,23 +2,35 @@ import Image from "next/image";
 import { EVENT } from "@/lib/event";
 import { RsvpForm } from "./rsvp-form";
 
+function Ornament() {
+  return (
+    <div
+      aria-hidden
+      className="divider-ornament my-6 sm:my-8 text-[#b08043]"
+    >
+      <span className="text-lg">❦</span>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <main className="flex flex-1 items-start justify-center px-3 py-8 sm:px-4 sm:py-20">
+    <main className="flex flex-1 items-start justify-center px-3 py-10 sm:px-4 sm:py-20">
       <div className="w-full max-w-2xl">
         <header className="text-center">
-          <p className="text-2xl sm:text-3xl">🏡 ✨</p>
-          <h1 className="mt-3 font-display text-3xl text-stone-900 sm:mt-4 sm:text-5xl">
+          <p className="font-script text-3xl text-[#b08043] sm:text-4xl">
+            With hearts full of joy
+          </p>
+          <h1 className="mt-2 font-display text-4xl italic text-stone-900 sm:text-6xl">
             Housewarming Celebration
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-stone-700 sm:mt-6 sm:text-lg">
-            With hearts full of joy, we warmly invite you to share a special
-            milestone with us.
+          <p className="mt-4 text-sm tracking-luxe text-stone-500 uppercase sm:mt-5 sm:text-xs">
+            You are warmly invited
           </p>
         </header>
 
-        <div className="mt-6 flex justify-center sm:mt-10">
-          <div className="relative overflow-hidden rounded-2xl border border-amber-200 bg-white shadow-md">
+        <div className="mt-8 flex justify-center sm:mt-10">
+          <div className="relative overflow-hidden rounded-2xl border border-[#d4b97a]/50 bg-white p-2 shadow-[0_10px_30px_-10px_rgba(176,128,67,0.35)] sm:p-3">
             <Image
               src="/family.png"
               alt={`${EVENT.hosts} at their housewarming`}
@@ -26,44 +38,54 @@ export default function Home() {
               height={662}
               priority
               sizes="(max-width: 640px) 240px, 320px"
-              className="block h-auto w-[240px] sm:w-[320px]"
+              className="block h-auto w-[240px] rounded-xl sm:w-[320px]"
             />
           </div>
         </div>
 
-        <section className="mt-6 rounded-2xl border border-amber-200 bg-white/60 p-5 text-center shadow-sm sm:mt-10 sm:p-8">
-          <p className="font-display text-xl text-stone-800 sm:text-2xl">
-            {EVENT.hosts}
+        <Ornament />
+
+        <section className="rounded-2xl border border-[#d4b97a]/50 bg-white/70 px-5 py-7 text-center shadow-[0_10px_30px_-15px_rgba(176,128,67,0.4)] backdrop-blur-sm sm:px-10 sm:py-10">
+          <p className="text-xs tracking-luxe text-stone-500 uppercase">
+            Together with their family
           </p>
-          <p className="mt-2 text-sm text-stone-600 sm:text-base">
-            invite you and your family to our
+          <p className="mt-4 font-script text-5xl text-stone-900 sm:text-6xl">
+            Naveen &amp; Sri&nbsp;Durga
           </p>
-          <p className="mt-3 font-display text-2xl text-amber-800 sm:text-3xl">
-            🏡 {EVENT.title} 🏡
+          <p className="mt-3 font-display italic text-base text-stone-600 sm:text-lg">
+            request the honour of your presence at their
+          </p>
+          <p className="mt-4 font-display text-2xl tracking-[0.2em] text-[#7a4f1d] uppercase sm:text-3xl">
+            Housewarming Ceremony
           </p>
 
-          <dl className="mt-6 grid grid-cols-1 gap-4 text-stone-700 sm:mt-8 sm:grid-cols-3">
+          <div
+            aria-hidden
+            className="mx-auto my-7 h-px w-24 bg-gradient-to-r from-transparent via-[#b08043]/60 to-transparent sm:my-9"
+          />
+
+          <dl className="grid grid-cols-1 gap-6 text-stone-700 sm:grid-cols-3 sm:gap-4">
             <div>
-              <dt className="text-xs uppercase tracking-wider text-stone-500">
+              <dt className="text-[10px] tracking-luxe text-stone-500 uppercase">
                 Date
               </dt>
-              <dd className="mt-1 font-display text-lg text-stone-900 sm:text-xl">
+              <dd className="mt-2 font-display text-xl text-stone-900 sm:text-2xl">
                 {EVENT.date}
               </dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-wider text-stone-500">
+              <dt className="text-[10px] tracking-luxe text-stone-500 uppercase">
                 Time
               </dt>
-              <dd className="mt-1 font-display text-lg text-stone-900 sm:text-xl">
+              <dd className="mt-2 font-display text-xl text-stone-900 sm:text-2xl">
                 {EVENT.time}
               </dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-wider text-stone-500">
-                Location
+              <dt className="text-[10px] tracking-luxe text-stone-500 uppercase">
+                Venue
               </dt>
-              <dd className="mt-1 font-display text-lg text-stone-900 sm:text-xl">
+              <dd className="mt-2 font-display text-lg text-stone-900 sm:text-xl">
                 {EVENT.address}
               </dd>
             </div>
@@ -73,31 +95,38 @@ export default function Home() {
             href={EVENT.mapsUrl}
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-full border border-amber-700 bg-amber-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-amber-800 sm:mt-8"
+            className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#b08043] bg-[#b08043] px-6 py-2.5 text-xs font-medium tracking-[0.2em] text-white uppercase shadow-sm transition hover:bg-[#8a6432] sm:mt-8"
           >
             <span aria-hidden>📍</span>
-            Get directions on Google Maps
+            Get Directions
           </a>
 
-          <p className="mt-6 text-stone-700 sm:mt-8">
+          <p className="mt-7 font-display italic text-base text-stone-700 sm:mt-9 sm:text-lg">
             Please join us for {EVENT.meal}.
           </p>
         </section>
 
-        <section className="mt-6 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm sm:mt-10 sm:p-8">
-          <h2 className="font-display text-xl text-stone-900 sm:text-2xl">
+        <Ornament />
+
+        <section className="rounded-2xl border border-stone-200 bg-white px-5 py-7 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] sm:px-10 sm:py-10">
+          <h2 className="text-center font-script text-3xl text-[#b08043] sm:text-4xl">
             Kindly RSVP
           </h2>
-          <p className="mt-1 text-sm text-stone-600">
-            We&apos;d love to know if you can make it.
+          <p className="mt-1 text-center text-xs tracking-luxe text-stone-500 uppercase">
+            We&apos;d love to know if you can make it
           </p>
-          <div className="mt-5 sm:mt-6">
+          <div className="mt-6 sm:mt-8">
             <RsvpForm />
           </div>
         </section>
 
-        <footer className="mt-8 text-center text-xs text-stone-500 sm:mt-12 sm:text-sm">
-          With love, {EVENT.hosts}
+        <footer className="mt-10 text-center sm:mt-14">
+          <p className="text-xs tracking-luxe text-stone-500 uppercase">
+            With love
+          </p>
+          <p className="mt-2 font-script text-3xl text-stone-700 sm:text-4xl">
+            Naveen &amp; Sri&nbsp;Durga
+          </p>
         </footer>
       </div>
     </main>
