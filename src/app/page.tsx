@@ -63,18 +63,21 @@ export default function Home() {
               <dt className="text-xs uppercase tracking-wider text-stone-500">
                 Location
               </dt>
-              <dd className="mt-1">
-                <a
-                  href={EVENT.mapsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-display text-lg text-amber-800 underline-offset-4 hover:underline sm:text-xl"
-                >
-                  {EVENT.address}
-                </a>
+              <dd className="mt-1 font-display text-lg text-stone-900 sm:text-xl">
+                {EVENT.address}
               </dd>
             </div>
           </dl>
+
+          <a
+            href={EVENT.mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-amber-700 bg-amber-700 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-amber-800 sm:mt-8"
+          >
+            <span aria-hidden>📍</span>
+            Get directions on Google Maps
+          </a>
 
           <p className="mt-6 text-stone-700 sm:mt-8">
             Please join us for {EVENT.meal}.
