@@ -25,14 +25,14 @@ export default async function Home() {
     <main className="flex flex-1 items-start justify-center px-3 py-10 sm:px-4 sm:py-20">
       <div className="w-full max-w-2xl">
         <header className="text-center">
-          <p className="font-script text-3xl text-[#b08043] sm:text-4xl">
-            With hearts full of joy
+          <p className="text-sm tracking-luxe text-stone-500 uppercase sm:text-xs">
+            You are invited to
           </p>
           <h1 className="mt-2 font-display text-4xl italic text-stone-900 sm:text-6xl">
             {event.title}
           </h1>
-          <p className="mt-4 text-sm tracking-luxe text-stone-500 uppercase sm:mt-5 sm:text-xs">
-            You are warmly invited
+          <p className="mt-4 font-script text-3xl text-[#b08043] sm:mt-5 sm:text-4xl">
+            with heart full of joy
           </p>
         </header>
 
