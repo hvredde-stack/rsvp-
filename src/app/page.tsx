@@ -1,6 +1,8 @@
 import Image from "next/image";
-import { EVENT } from "@/lib/event";
+import { getEvent } from "@/lib/event";
 import { RsvpForm } from "./rsvp-form";
+
+export const dynamic = "force-dynamic";
 
 function Ornament() {
   return (
@@ -13,7 +15,12 @@ function Ornament() {
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  const event = await getEvent();
+  const [hostFirst, hostSecond] = event.hosts
+    .split(/\s*&\s*/)
+    .map((s) => s.trim());
+
   return (
     <main className="flex flex-1 items-start justify-center px-3 py-10 sm:px-4 sm:py-20">
       <div className="w-full max-w-2xl">
@@ -22,7 +29,7 @@ export default function Home() {
             With hearts full of joy
           </p>
           <h1 className="mt-2 font-display text-4xl italic text-stone-900 sm:text-6xl">
-            Housewarming Celebration
+            {event.title}
           </h1>
           <p className="mt-4 text-sm tracking-luxe text-stone-500 uppercase sm:mt-5 sm:text-xs">
             You are warmly invited
@@ -33,7 +40,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-2xl border border-[#d4b97a]/50 bg-white p-2 shadow-[0_10px_30px_-10px_rgba(176,128,67,0.35)] sm:p-3">
             <Image
               src="/family.png"
-              alt={`${EVENT.hosts} at their housewarming`}
+              alt={`${event.hosts} at their housewarming`}
               width={382}
               height={662}
               priority
@@ -50,13 +57,19 @@ export default function Home() {
             Together with their family
           </p>
           <p className="mt-4 font-script text-5xl text-stone-900 sm:text-6xl">
-            Naveen &amp; Sri&nbsp;Durga
+            {hostSecond ? (
+              <>
+                {hostFirst} &amp; {hostSecond}
+              </>
+            ) : (
+              event.hosts
+            )}
           </p>
           <p className="mt-3 font-display italic text-base text-stone-600 sm:text-lg">
             request the honour of your presence at their
           </p>
           <p className="mt-4 font-display text-2xl tracking-[0.2em] text-[#7a4f1d] uppercase sm:text-3xl">
-            Housewarming Ceremony
+            {event.title}
           </p>
 
           <div
@@ -70,7 +83,7 @@ export default function Home() {
                 Date
               </dt>
               <dd className="mt-2 font-display text-xl text-stone-900 sm:text-2xl">
-                {EVENT.date}
+                {event.date}
               </dd>
             </div>
             <div>
@@ -78,7 +91,7 @@ export default function Home() {
                 Time
               </dt>
               <dd className="mt-2 font-display text-xl text-stone-900 sm:text-2xl">
-                {EVENT.time}
+                {event.time}
               </dd>
             </div>
             <div>
@@ -86,13 +99,13 @@ export default function Home() {
                 Venue
               </dt>
               <dd className="mt-2 font-display text-lg text-stone-900 sm:text-xl">
-                {EVENT.address}
+                {event.address}
               </dd>
             </div>
           </dl>
 
           <a
-            href={EVENT.mapsUrl}
+            href={event.mapsUrl}
             target="_blank"
             rel="noreferrer"
             className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#b08043] bg-[#b08043] px-6 py-2.5 text-xs font-medium tracking-[0.2em] text-white uppercase shadow-sm transition hover:bg-[#8a6432] sm:mt-8"
@@ -102,7 +115,7 @@ export default function Home() {
           </a>
 
           <p className="mt-7 font-display italic text-base text-stone-700 sm:mt-9 sm:text-lg">
-            Please join us for {EVENT.meal}.
+            Please join us for {event.meal}.
           </p>
         </section>
 
@@ -125,7 +138,13 @@ export default function Home() {
             With love
           </p>
           <p className="mt-2 font-script text-3xl text-stone-700 sm:text-4xl">
-            Naveen &amp; Sri&nbsp;Durga
+            {hostSecond ? (
+              <>
+                {hostFirst} &amp; {hostSecond}
+              </>
+            ) : (
+              event.hosts
+            )}
           </p>
         </footer>
       </div>
