@@ -25,15 +25,12 @@ export default async function Home() {
     <main className="flex flex-1 items-start justify-center px-3 py-10 sm:px-4 sm:py-20">
       <div className="w-full max-w-2xl">
         <header className="text-center">
-          <p className="text-sm tracking-luxe text-stone-500 uppercase sm:text-xs">
-            An invitation
+          <p className="font-script text-3xl text-[#b08043] sm:text-4xl">
+            with heart full of joy
           </p>
           <h1 className="mt-2 font-display text-4xl italic text-stone-900 sm:text-6xl">
             {event.title}
           </h1>
-          <p className="mt-4 font-script text-3xl text-[#b08043] sm:mt-5 sm:text-4xl">
-            with heart full of joy
-          </p>
         </header>
 
         <div className="mt-8 flex justify-center sm:mt-10">
@@ -54,7 +51,7 @@ export default async function Home() {
 
         <section className="rounded-2xl border border-[#d4b97a]/50 bg-white/70 px-5 py-7 text-center shadow-[0_10px_30px_-15px_rgba(176,128,67,0.4)] backdrop-blur-sm sm:px-10 sm:py-10">
           <p className="text-xs tracking-luxe text-stone-500 uppercase">
-            Together with their family
+            Together with our family
           </p>
           <p className="mt-4 font-script text-5xl text-stone-900 sm:text-6xl">
             {hostSecond ? (
