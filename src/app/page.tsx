@@ -26,7 +26,7 @@ export default async function Home() {
       <div className="w-full max-w-2xl">
         <header className="text-center">
           <p className="text-sm tracking-luxe text-stone-500 uppercase sm:text-xs">
-            You are invited to
+            An invitation
           </p>
           <h1 className="mt-2 font-display text-4xl italic text-stone-900 sm:text-6xl">
             {event.title}
@@ -64,9 +64,6 @@ export default async function Home() {
             ) : (
               event.hosts
             )}
-          </p>
-          <p className="mt-3 font-display italic text-base text-stone-600 sm:text-lg">
-            request the honour of your presence at their
           </p>
           <p className="mt-4 font-display text-2xl tracking-[0.2em] text-[#7a4f1d] uppercase sm:text-3xl">
             {event.title}
